@@ -641,6 +641,9 @@ span{
     margin: 3rem 0;
     color: white;
   }
+  section {
+    padding: 6em 2% 6rem;
+  }
   .home{
     flex-direction: column-reverse ;
     margin: 5rem 4rem;
