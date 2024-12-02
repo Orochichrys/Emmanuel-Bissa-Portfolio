@@ -255,7 +255,7 @@ span{
 .heading{
   font-size:8rem ;
   text-align: center;
-  margin:5rem 0;
+  margin:2rem 0;
 }
 .education{
   padding:100px 15px;
@@ -661,7 +661,6 @@ span{
   }
   .heading{
     font-size:6rem ;
-    margin:1rem 0;
   }
   .services h2{
     margin-bottom: 3rem;
