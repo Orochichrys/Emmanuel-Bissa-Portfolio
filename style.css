@@ -339,7 +339,7 @@ span{
   width: 15px;
 }
 ::-webkit-scrollbar-thumb{
-  background-color: var(--maim-color);
+  background-color: var(--main-color);
 }
 ::-webkit-scrollbar-track{
   background-color: var(--bg-color);
