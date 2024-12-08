@@ -827,9 +827,9 @@ span {
   .services-container {
     grid-template-columns: repeat(1, 1fr);
   }
-.certificats-container {
-  grid-template-columns: repeat(2, 1fr);
-    }
+/*.certificats-container {
+  grid-template-columns: repeat(1, 1fr);
+    }*/
   .certificats-box .img img {
     height: 300px;
     width: 300px;
