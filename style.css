@@ -511,7 +511,7 @@ span {
 
 .certificats-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   overflow: auto;
   gap: 20px;
   padding: 15px;
