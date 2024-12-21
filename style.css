@@ -4,8 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   border: none;
-  outline: none;
-  scroll-behavior: smooth;
+  outline: none;  scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
 }
 
@@ -511,7 +510,7 @@ span {
 
 .certificats-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   overflow: auto;
   gap: 20px;
   padding: 15px;
