@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Couleurs principales */
+    --bg-color: #000000;
+    --second-bg-color: #131313;
+    --text-color: #ffffff;
+    --text-muted: #a0a0a0;
+    --main-color: #00ffee;
+    --error-color: #ff4d4d;
+
+    /* Typographie et structure */
+    --font-family: "Poppins", sans-serif;
+    --header-height: 60px;
+
+    /* Border-radius uniformisés */
+    --border-radius: 8px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 50%;
+
+    /* Ombrages & Néons uniformisés */
+    --shadow-glow-sm: 0 0 10px rgba(0, 255, 238, 0.1);
+    --shadow-glow-md: 0 0 15px rgba(0, 255, 238, 0.3);
+    --shadow-glow-lg: 0 0 25px rgba(0, 255, 238, 0.5);
+
+    /* Espacements uniformisés */
+    --padding-card: 20px;
+    --padding-input: 10px 12px;
+    --padding-btn: 10px 20px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   1. STYLES MOBILE (Par défaut)
+   ========================================== */
+
+/* En-tête (Header) */
+header {
+    height: var(--header-height);
+    background-color: var(--second-bg-color);
+    border-bottom: 1px solid #222;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.25rem;
+    color: var(--main-color);
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header div a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header div a:hover {
+    color: var(--main-color);
+}
+
+/* Navigation (Sidebar mobile) */
+.sidebar {
+    background-color: var(--second-bg-color);
+    border-bottom: 1px solid #222;
+    padding: 10px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.sidebar ul {
+    display: flex;
+    list-style: none;
+    padding: 0 15px;
+    gap: 10px;
+}
+
+.sidebar ul li a {
+    display: flex;          
+    align-items: center;    
+    gap: 10px;              
+    padding: 8px 14px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a i {
+    font-size: 1.2rem;
+}
+
+.sidebar ul li a:hover {
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    font-weight: 600;
+}
+
+/* Zone Principale */
+main {
+    padding: 20px;
+    flex: 1;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+main h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin: 30px 0 15px 0;
+}
+
+/* Cartes (Dashboard Grid) */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 15px;
+}
+
+.grid-container .item {
+    background-color: var(--second-bg-color);
+    border: 1px solid var(--main-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 238, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-container .item i {
+    font-size: 2.5rem;             
+    color: var(--main-color);      
+    margin-bottom: 12px;         
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.grid-container .item:hover i {
+    transform: scale(1.15);
+}
+
+.grid-container .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 255, 238, 0.3);
+}
+
+.grid-container .item h2 {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.grid-container .item p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+/* ==========================================
+   2. FORMULAIRES ET TABLEAUX (ADMIN)
+   ========================================== */
+
+/* Formulaires */
+.admin-form {
+    background-color: var(--second-bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid #222;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--bg-color);
+    border: 1px solid #333;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--main-color);
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px rgba(0, 255, 238, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Tableaux */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--second-bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.admin-table th, 
+.admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+    font-size: 0.9rem;
+}
+
+.admin-table th {
+    background-color: #1a1a1a;
+    color: var(--main-color);
+}
+
+.admin-table td a {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.admin-table .btn-edit:hover {
+    color: var(--main-color);
+}
+
+.admin-table .btn-delete:hover {
+    color: var(--error-color);
+}
+
+.alert-error {
+    background-color: rgba(255, 77, 77, 0.1);
+    border: 1px solid var(--error-color);
+    color: var(--error-color);
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+}
+
+.alert-success {
+    background-color: rgba(0, 255, 238, 0.1);
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================
+   3. STYLES TABLETTE & ÉCRANS MOYENS (>= 768px)
+   ========================================== */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+}
+
+/* ==========================================
+   4. STYLES ORDINATEUR (>= 1024px)
+   ========================================== */
+@media (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        grid-template-rows: var(--header-height) 1fr;
+        grid-template-areas:
+            "header header"
+            "sidebar main";
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    /* Sidebar fixe avec défilement interne */
+    .sidebar {
+        grid-area: sidebar;
+        border-bottom: none;
+        border-right: 1px solid #222;
+        padding: 20px 0;
+        height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .sidebar ul {
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 8px;
+    }
+
+    .sidebar ul li a {
+        background-color: transparent;
+        font-size: 1rem;
+    }
+
+    /* Main autonome avec son propre défilement */
+    main {
+        grid-area: main;
+        padding: 30px;
+        height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+/* ==========================================
+   5. PERSONNALISATION DES BARRES DE SCROLL
+   ========================================== */
+.sidebar::-webkit-scrollbar,
+main::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+main::-webkit-scrollbar-track {
+    background: var(--second-bg-color);
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+main::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+main::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+}
